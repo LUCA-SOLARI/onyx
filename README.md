@@ -1,4 +1,4 @@
-Spring Boot Single Product eCommerce App 🚀
+#Spring Boot Single Product eCommerce App 🚀
 
 Welcome to a simple yet powerful eCommerce app built with **Spring Boot**! 🛒 This application allows users to purchase a single product through the **Stripe** payment gateway, demonstrating how to securely process payments using Stripe’s **Checkout Session**.
 
