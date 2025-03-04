@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title th:text="${product.name} + ' - Onyx Store'">Product - Onyx Store</title>
+    <link rel="stylesheet" href="/main/style/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/main/style/assets/css/Hero-Clean-Reverse-images.css">
+    <link rel="stylesheet" href="/main/style/assets/assets/css/Navbar-Right-Links-Dark-icons.css">
+</head>
+
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-md bg-dark py-3" data-bs-theme="dark">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="/"><span>ONYX STORE</span></a>
+        <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-5">
+            <span class="visually-hidden">Toggle navigation</span>
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navcol-5">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+            </ul>
+            <a class="btn btn-primary ms-md-2" role="button" href="/cart">
+                Cart
+                <span th:if="${cart_qty}" class="badge bg-light text-dark ms-1" th:text="${cart_qty}"></span>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<!-- Main Product Section -->
+<div class="container py-4 py-xl-5">
+    <div class="row gy-4 gy-md-0">
+        <div class="col-md-6 text-center text-md-start d-flex d-sm-flex d-md-flex justify-content-center align-items-center justify-content-md-start align-items-md-center justify-content-xl-center">
+            <div style="max-width: 350px;">
+                <h2 class="text-uppercase fw-bold" th:text="${product.name}">Product Name</h2>
+                <p class="my-3" th:text="${product.description}">Product Description</p>
+                <h2 class="text-uppercase fw-bold" style="font-size: 24.868px;" th:text="${product.price + ' $'}">Price $</h2>
+
+                <!-- ADD TO CART Button inside the Form -->
+                <form method="POST" action="/cart/add">
+                    <input type="hidden" name="id" th:value="${product.id}" />
+                    <button type="submit" class="btn btn-primary btn-lg me-2">ADD TO CART</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="p-xl-5 m-xl-5">
+                <img class="rounded img-fluid w-100 fit-cover" style="min-height: 300px;" th:src="${product.pictureUrl}" alt="Product Image">
+            </div>
+        </div>
+    </div>
+    <h1 style="text-align: center;font-size: 25.61px;margin: 29px;margin-bottom: -9px;">4K Ultra HD Camera</h1>
+</div>
+
+<!-- Promotional Section -->
+<section class="text-white py-4 py-xl-5">
+    <div class="container">
+        <div class="border rounded border-0 d-flex flex-column justify-content-center align-items-center p-4 py-5"
+             style="background: linear-gradient(rgba(0,123,255,0.2), rgba(0,123,255,0.2)), url('https://cdn.bootstrapstudio.io/placeholders/1400x800.png') center / cover;height: 500px;">
+            <div class="row">
+                <div class="col-md-10 col-xl-8 text-center d-flex d-sm-flex d-md-flex justify-content-center align-items-center mx-auto justify-content-md-start align-items-md-center justify-content-xl-center">
+                    <div>
+                        <h1 class="text-uppercase fw-bold mb-3">Special Promotion</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cards Section -->
+    <div class="container py-4 py-xl-5">
+        <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body p-4">
+                        <h4 class="card-title" style="text-align: center;">Title</h4>
+                        <p class="card-text">Erat netus est hendrerit, nullam et quis ad cras porttitor iaculis. Bibendum vulputate cras aenean.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body p-4">
+                        <h4 class="card-title" style="text-align: center;">Title</h4>
+                        <p class="card-text">Erat netus est hendrerit, nullam et quis ad cras porttitor iaculis. Bibendum vulputate cras aenean.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Technical Features -->
+    <div class="container py-4 py-xl-5">
+        <div class="row row-cols-1 row-cols-md-2">
+            <div class="col">
+                <img class="rounded w-100 h-100 fit-cover" style="min-height: 300px;"
+                     src="https://m.media-amazon.com/images/I/51ovub882iL.jpg">
+            </div>
+            <div class="col d-flex flex-column justify-content-center p-4">
+                <div class="text-center text-md-start d-flex flex-column align-items-center align-items-md-start">
+                    <div>
+                        <h4 style="color: rgb(0,0,0);">Technical Features</h4>
+                        <p style="color: rgb(0,0,0);">- Feature 1</p>
+                        <p style="color: rgb(0,0,0);">- Feature 2</p>
+                        <p style="color: rgb(0,0,0);">- Feature 3</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Scripts -->
+<script src="/main/style/assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
