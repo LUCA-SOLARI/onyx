@@ -1,4 +1,4 @@
-# Single-Product Drone eCommerce App with Stripe Integration
+# Spring Boot single product ecommerce app
 
 A simple eCommerce application built with **Spring Boot** that allows users to purchase a single product using **Stripe** payment gateway. This application demonstrates how to integrate Stripe Checkout Session to handle payments securely.
 
