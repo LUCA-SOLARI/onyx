@@ -2,7 +2,7 @@
 
 Welcome to a simple yet powerful eCommerce app built with **Spring Boot**! 🛒 This application allows users to purchase a single product through the **Stripe** payment gateway, demonstrating how to securely process payments using Stripe’s **Checkout Session**.
 
-🚧 **Note:** This project is still a **work in progress**. The core functionality is in place and nearly ready for production, but some features are still being finalized. Stay tuned for updates! A **live testing version** of the app will be available soon. 🎉
+🚧 **Note:** This project is still a **work in progress**. Stay tuned for updates! A **live testing version** of the app will be available soon. 🎉
 
 ---
 
@@ -11,8 +11,6 @@ Welcome to a simple yet powerful eCommerce app built with **Spring Boot**! 🛒 
 - **🛍️ Single Product Showcase**: Display a single product with details and pricing.
 - **💳 Stripe Payment Integration**: Seamlessly process payments using the Stripe API, ensuring secure transactions.
 - **📱 Responsive Design**: Built with **Thymeleaf** and **Bootstrap** for a sleek, user-friendly interface on both desktop and mobile devices.
-- **👤 Guest Checkout**: Users do not need to create an account to make a purchase. After checkout, customers are registered as guest users.
-- **🛒 Cart Session**: Cart information is temporarily saved in the session, ensuring a smooth shopping experience during the user’s session.
 
 ---
 
@@ -35,14 +33,14 @@ Once the product is added to the cart, users can view and proceed to checkout.
 ---
 
 ### 3. Stripe Checkout Screenshot
-The Stripe checkout page allows users to securely enter their payment details.
+The Stripe checkout page allows users to securely enter their payment details and also collects shipping info.
 
 ![Stripe Checkout Screenshot](https://onyx-demo-assets.s3.us-east-1.amazonaws.com/screenshot_onyx_stripe_checkout.png)
 
 ---
 
 ### 4. Success Order Confirmation Screenshot
-After completing the purchase, users are shown a confirmation page with order details and success message.
+After completing the purchase, users are shown a confirmation page with the order identifier and success message.
 
 ![Order Confirmation Screenshot](https://onyx-demo-assets.s3.us-east-1.amazonaws.com/screenshot_onyx_order_confirmation.png)
 
@@ -61,8 +59,8 @@ Before running the application, make sure you have the following:
 
 ## 📋 Important Notes
 
-- **Guest Checkout**: The app does not support account creation. Users are treated as guest customers and their order information is stored temporarily in the database for order history purposes.
-- **Session-Based Cart**: The cart information is saved in the user's session. This is a simple solution for a single product cart but is not designed to be persistent across sessions or for use with multiple products.
+- **Guest Checkout**: The app does not support account creation. Users are treated as guest customers and their order information is stored in the database.
+- 
 - **Not Meant for Scalability**: This application is designed as a simple demonstration of the payment flow and is not intended to be highly scalable or production-ready. It is a lightweight app to showcase basic eCommerce functionality with Stripe.
 
 ---
