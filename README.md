@@ -60,7 +60,7 @@ Before running the application, make sure you have the following:
 ## 📋 Important Notes
 
 - **Guest Checkout**: The app does not support account creation. Users are treated as guest customers and their order information is stored in the database.
-- 
+
 - **Not Meant for Scalability**: This application is designed as a simple demonstration of the payment flow and is not intended to be highly scalable or production-ready. It is a lightweight app to showcase basic eCommerce functionality with Stripe.
 
 ---
