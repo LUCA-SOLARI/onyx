@@ -14,6 +14,14 @@ Welcome to a simple yet powerful eCommerce app built with **Spring Boot**! 🛒 
 
 ---
 
+## 🖼️ Screenshot
+
+Here's a sneak peek of the app in action:
+
+![App Screenshot](https://onyx-demo-assets.s3.us-east-1.amazonaws.com/screenshot_onyx_main_page.png)
+
+---
+
 ## 🏃‍♂️ Prerequisites
 
 Before running the application, make sure you have the following:
@@ -22,4 +30,3 @@ Before running the application, make sure you have the following:
 - **🔧 Maven**: Use Maven to build and manage project dependencies.
 - **💳 Stripe Account**: You’ll need a **Stripe account** to get the **API keys** for payment processing.
 - **🐬 MySQL Server**: To store product details and guest order information, you’ll need a **MySQL server**
-
