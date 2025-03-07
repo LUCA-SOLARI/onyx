@@ -18,28 +18,28 @@ Welcome to a simple yet powerful eCommerce app built with **Spring Boot**! 🛒 
 
 Here's a clear, visual walkthrough of the app's flow:
 
-### 1. Main Page Screenshot
+### 1. Main Page
 The main page showcases the product with details and the option to add it to the cart.
 
 ![Main Page Screenshot](https://onyx-demo-assets.s3.us-east-1.amazonaws.com/screenshot_onyx_main_page.png)
 
 ---
 
-### 2. Cart Screenshot
+### 2. Cart
 Once the product is added to the cart, users can view and proceed to checkout.
 
 ![Cart Screenshot](https://onyx-demo-assets.s3.us-east-1.amazonaws.com/screenshot_onyx_cart.png)
 
 ---
 
-### 3. Stripe Checkout Screenshot
+### 3. Stripe Checkout
 The Stripe checkout page allows users to securely enter their payment details and also collects shipping info.
 
 ![Stripe Checkout Screenshot](https://onyx-demo-assets.s3.us-east-1.amazonaws.com/screenshot_onyx_stripe_checkout.png)
 
 ---
 
-### 4. Success Order Confirmation Screenshot
+### 4. Success Order Confirmation
 After completing the purchase, users are shown a confirmation page with the order identifier and success message.
 
 ![Order Confirmation Screenshot](https://onyx-demo-assets.s3.us-east-1.amazonaws.com/screenshot_onyx_order_confirmation.png)
