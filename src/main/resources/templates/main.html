@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/Hero-Clean-images.css">
+    <link rel="stylesheet" href="assets/css/Navbar-Right-Links-Dark-icons.css">
+    <style>
+        /* Dark Metal Gray Button Color */
+        .btn-dark-metal {
+            background-color: black;
+            border-color: black;
+            color: white;
+        }
+        .btn-dark-metal:hover {
+            background-color: black;
+            border-color: black;
+            color: white;
+        }
+
+        /* Review name color update */
+        .review-name {
+            color: #4b4b4b;
+        }
+    </style>
+</head>
+
+<body>
+<!-- NAVBAR MAIN -->
+<nav class="navbar navbar-expand-md bg-dark py-3" data-bs-theme="dark">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="/"><span>ONYX STORE</span></a>
+        <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-5">
+            <span class="visually-hidden">Toggle navigation</span>
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navcol-5">
+            <ul class="navbar-nav ms-auto align-items-md-center align-items-start">
+                <li class="nav-item"><a class="nav-link" href="/">Shop</a></li>
+                <li class="nav-item">
+                    <a href="/cart" class="nav-link d-flex align-items-center">
+                        <i class="bi bi-cart-fill" style="font-size: 1.7rem;"></i>
+                        <span th:if="${cart_qty}" class="badge bg-light text-dark ms-1" th:text="${cart_qty}"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container py-4 py-xl-5" style="margin-top: 40px;margin-bottom: 40px;">
+    <div class="row gy-4 gy-md-0">
+        <div class="col-md-6">
+            <div class="p-xl-5 m-xl-5">
+                <!--<img class="rounded img-fluid w-100 fit-cover" style="min-height: 300px;" th:src="${product.pictureUrl}">-->
+                <img class="rounded img-fluid w-100" style="min-height: 300px; object-fit: contain;" th:src="${product.pictureUrl}">
+            </div>
+        </div>
+        <div class="col-md-6 d-md-flex align-items-md-center">
+            <div style="max-width: 350px;">
+                <h2 class="text-uppercase fw-bold" th:text="${product.name}">o-nyx</h2>
+                <p class="my-3" th:text="${product.description}">A 4K super performant drone</p>
+                <h4 class="text-uppercase fw-bold" style="margin-bottom: 1.2rem;" th:text="${product.price} + ' $'">799.00 $</h4>
+                <!-- POST Form for Add to Cart -->
+                <form method="post" action="/cart/add">
+                    <input type="hidden" th:value="${product.id}" name="id" />
+                    <button type="submit" class="btn btn-dark-metal btn-lg me-2">
+                        ADD TO CART
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<section>
+
+    <div data-bss-parallax-bg="true" style="height: 600px;background: url('https://onyx-demo-assets.s3.us-east-1.amazonaws.com/pexels-connor-gibson-187262257-11320528.jpg') center / cover;">
+    <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-md-6 text-center text-md-start d-flex d-sm-flex d-md-flex justify-content-center align-items-center justify-content-md-start align-items-md-center justify-content-xl-center">
+                    <div style="max-width: 350px;">
+                        <h1 class="text-uppercase fw-bold" style="background: var(--bs-body-color);color: var(--bs-body-bg);font-size: 24px;border-color: var(--bs-emphasis-color);padding-top: 10px;padding-left: 10px;padding-bottom: 10px;padding-right: 20px;">4K ULTRA HD CAMERA</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container py-4 py-xl-5" style="margin-top: 30px;">
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col d-flex flex-column justify-content-center p-4">
+            <div class="text-center text-md-start d-flex flex-column align-items-center align-items-md-start mb-4">
+                <div style="max-width: 100%; width: 100%;">
+                    <h4>Very powerful remote controller</h4>
+                    <p style="width: 100%; line-height: 1.6; word-spacing: 0.1em; margin-bottom: 0;">The Onyx drone's ergonomic remote controller offers intuitive controls and a built-in display for real-time flight data. It provides seamless connectivity, ensuring stable performance over long distances. With customizable buttons, it allows easy access to key functions, giving you complete control during flight.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <img class="rounded w-100 h-100 fit-cover" style="min-height: 300px; object-fit: cover;" src="https://onyx-demo-assets.s3.us-east-1.amazonaws.com/6215.jpg">
+        </div>
+    </div>
+</div>
+<hr style="border: 2px solid lightgrey;">
+<!-- TECHNICAL FEATURES PART -->
+<section class="text-white py-4 py-xl-5">
+    <div class="container">
+        <div class="border rounded border-0 d-flex flex-column justify-content-center align-items-center p-4 py-5 text-center" style="height: auto; max-width: 800px; margin: auto;">
+            <h4 style="color: var(--bs-emphasis-color);margin-bottom: 1.5rem;">Technical Features</h4>
+            <ul class="list-unstyled text-start mx-auto" style="max-width: 600px; font-size: 16px; line-height: 1.8; color: var(--bs-emphasis-color);">
+                <li><strong>Flight Time:</strong> Up to 30 minutes per charge</li>
+                <li><strong>Camera Quality:</strong> 4K UHD with 3-axis gimbal stabilization</li>
+                <li><strong>Control Range:</strong> Up to 10 km with real-time transmission</li>
+                <li><strong>GPS & Auto-Return:</strong> Intelligent GPS-based auto return-home feature</li>
+                <li><strong>Max Speed:</strong> 72 km/h (Sport Mode enabled)</li>
+                <li><strong>Battery Type:</strong> 5000mAh Li-Po rechargeable battery</li>
+                <li><strong>Obstacle Avoidance:</strong> 360° multi-directional collision sensors</li>
+                <li><strong>Remote Controller:</strong> Ergonomic controller with built-in display</li>
+                <li><strong>Night Mode:</strong> Enhanced low-light performance with AI processing</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!--<footer class="py-4 bg-dark">
+    <div class="container text-center text-white">
+        <p>&copy; 2025 O-NYX Store. All Rights Reserved.</p>
+    </div>
+</footer>-->
+<footer class="py-4 bg-dark">
+    <div class="container text-center text-white">
+        <p>&copy; 2025 O-NYX Store. All Rights Reserved.</p>
+        <p class="mb-0">
+            Drone remote controller picture designed by
+            <a href="https://www.freepik.com" class="text-white text-decoration-none" target="_blank">Freepik</a>.
+        </p>
+        <p class="mb-0">
+            Drone product picture designed by
+            <a href="https://www.rawpixel.com" class="text-white text-decoration-none" target="_blank">rawpixel</a>.
+        </p>
+        <p class="mb-0">
+            Drone landscape picture designed by Connor Gibson from Pexels
+        </p>
+    </div>
+</footer>
+
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
