@@ -84,7 +84,7 @@ spring.jpa.hibernate.ddl-auto=update
 spring.jpa.properties.hibernate.show_sql=true  
 spring.jpa.properties.hibernate.highlight_sql=true  
 
-# Disable URL-based session tracking for security  
+#servlet configuration
 server.servlet.session.tracking-modes=COOKIE  
 
 # Stripe configuration  
