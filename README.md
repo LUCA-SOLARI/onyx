@@ -10,6 +10,7 @@ Welcome to a simple yet powerful eCommerce app built with **Spring Boot**! 🛒 
 
 - **🛍️ Single Product Showcase**: Display a single product with details and pricing.
 - **💳 Stripe Payment Integration**: Seamlessly process payments using the Stripe API, ensuring secure transactions.
+- **🔔 Stripe Webhook Integration**: Uses **Stripe Webhooks** to securely confirm orders and prevent unauthorized purchases.
 - **📱 Responsive Design**: Built with **Thymeleaf** and **Bootstrap** for a sleek, user-friendly interface on both desktop and mobile devices.
 
 ---
@@ -59,9 +60,38 @@ Before running the application, make sure you have the following:
 
 ## 📋 Important Notes
 
-- **Guest Checkout**: The app does not support account creation. Users are treated as guest customers and their order information is stored in the database.
+- **Guest Checkout**: The app does not support account creation. Users are treated as guest customers, and their order information is stored in the database.
+- **Application Properties File**: The `application.properties` file is not included in the repository for security reasons. You must create this file inside the `src/main/resources/` directory before running the application. This file contains important configurations such as database connection details, Stripe API keys, and session settings.
+- **Expected Database Product**: The application expects to find a product with **ID 1** in the database. Make sure to insert at least one product in the database before running the app.
+- **Easily Customizable for Any Product**: Although this app is set up to sell a drone, it can be used to sell **any single product**. To customize it for a different product, simply update the product details in the database and modify the product page according to the new product.
 
-- **Not Meant for Scalability**: This application is designed as a simple demonstration of the payment flow and is not intended to be highly scalable or production-ready. It is a lightweight app to showcase basic eCommerce functionality with Stripe.
+### 📄 `application.properties` Template
 
----
+Below is an example of what your `application.properties` file should look like:
+
+```properties
+# Database configuration  
+spring.datasource.url=  
+spring.datasource.username=  
+spring.datasource.password=  
+
+# HikariCP connection pool settings  
+# maxLifetime must be several seconds shorter than MySQL wait_timeout  
+spring.datasource.hikari.maxLifetime=27970000  
+spring.datasource.hikari.keepaliveTime=30000  
+
+spring.jpa.hibernate.ddl-auto=update  
+spring.jpa.properties.hibernate.show_sql=true  
+spring.jpa.properties.hibernate.highlight_sql=true  
+
+# Disable URL-based session tracking for security  
+server.servlet.session.tracking-modes=COOKIE  
+
+# Stripe configuration  
+stripe.secretApiKey=  
+# The HTTPS URL Stripe will redirect to after success/cancel payment  
+stripe.domain=  
+# The webhook secret you'll get when creating Stripe webhooks  
+stripe.webhookSecret=  
+
 
